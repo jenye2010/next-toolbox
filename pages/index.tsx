@@ -1,4 +1,4 @@
-import { Item_Digital } from '@/components/item';
+import { Item_Clock } from '@/components/item';
 import { NextPage } from "next";
 
 interface Props {
@@ -11,7 +11,7 @@ const Index: NextPage<Props> = () => {
       className={`flex min-h-screen flex-col items-center justify-between bg-primaryBright p-24`}
     >
       <div>
-        <Item_Digital />
+        <Item_Clock />
       </div>
     </main>
   )

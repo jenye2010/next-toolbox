@@ -1,7 +1,7 @@
 import dayjs from 'dayjs';
 import timezone from 'dayjs/plugin/timezone';
 import utc from 'dayjs/plugin/utc';
-import { Dispatch, SetStateAction, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 dayjs.extend(utc);
 dayjs.extend(timezone);
@@ -9,17 +9,15 @@ dayjs.extend(timezone);
 interface Props {
   className?: string;
   children?: React.ReactNode;
-  // time: string;
-  // setTime: Dispatch<SetStateAction<string>>;
 }
 
-export const Item_Digital = ({ className = '', }: Props) => {
+export const Item_Clock = ({ className = '', }: Props) => {
   const [time, setTime] = useState('');
   useEffect(() => {
     setInterval(() => {
       setTime(dayjs().format('YYYY年MM月DD日 hh:mm:ss'))
     }
-      , 1000);
+      , 100);
   }, [setTime])
   return (
     <div className={`flex flex-col justify-start items-stretch mx-3 ${className}`}>
